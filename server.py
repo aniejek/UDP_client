@@ -1,0 +1,34 @@
+class Server:
+    _DEFAULT_START_PORT = 5050
+    _DEFAULT_IP = '127.0.0.1'
+
+    class Receiver:
+        def __init__(self, ip, port):
+            self.ip = ip
+            self.port = port
+
+    class Sender:
+        def __init__(self, ip, port):
+            self.ip = ip
+            self.port = port
+
+    class Player:
+        def __init__(self, ip, port, message):
+            self.ip = ip
+            self.port = port
+            self.message = message
+            self.sender = Server.Sender(ip, port)
+            self.receiver = Server.Receiver(ip, port)
+
+    def __find_player__(self, ip=_DEFAULT_IP, port=_DEFAULT_START_PORT):
+        self.players.append(Server.Player(ip, port, bytes(self.Player.__len__())))
+
+    def __init__(self, ip=_DEFAULT_IP, start_port=_DEFAULT_START_PORT):
+        self.ip = ip
+        self.players = []
+        # self.start_port = start_port
+        # self.senders = [self.Sender(ip, start_port)]
+        # self.receivers = [self.Receiver(ip, start_port)]
+
+
+        # TODO
