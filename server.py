@@ -23,12 +23,14 @@ class Server:
     def __find_player__(self, ip=_DEFAULT_IP, port=_DEFAULT_START_PORT):
         self.players.append(Server.Player(ip, port, bytes(self.Player.__len__())))
 
-    def __init__(self, ip=_DEFAULT_IP, start_port=_DEFAULT_START_PORT):
+    def __init__(self, ip=_DEFAULT_IP, start_port=_DEFAULT_START_PORT, players_number=3):
         self.ip = ip
         self.players = []
+        while len(self.players) != players_number:
+            self.__find_player__()
+
         # self.start_port = start_port
         # self.senders = [self.Sender(ip, start_port)]
         # self.receivers = [self.Receiver(ip, start_port)]
 
 
-        # TODO
