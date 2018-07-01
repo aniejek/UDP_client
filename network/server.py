@@ -20,9 +20,6 @@ class Server:
             self.sender = Server.Sender(ip, port)
             self.receiver = Server.Receiver(ip, port)
 
-    def __find_player__(self, ip=_DEFAULT_IP, port=_DEFAULT_START_PORT):
-        self.players.append(Server.Player(ip, port, bytes(self.Player.__len__())))
-
     def __init__(self, ip=_DEFAULT_IP, start_port=_DEFAULT_START_PORT, players_number=3):
         self.ip = ip
         self.players = []
@@ -32,5 +29,3 @@ class Server:
         # self.start_port = start_port
         # self.senders = [self.Sender(ip, start_port)]
         # self.receivers = [self.Receiver(ip, start_port)]
-
-
